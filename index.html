@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrigSolver</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Math.js and Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light"> <!-- Default: light mode -->
+  <div class="container">
+    <h2>TrigSolver</h2>
+    <p class="tagline">Solve Trig problems with ease</p>
+
+    <!-- Dark/Light Mode Toggle -->
+    <button id="toggleDark">🌙 Dark Mode</button>
+    <br><br>
+
+    <!-- Expression Input -->
+    <input type="text" 
+           id="expression" 
+           placeholder="Enter expression" 
+           size="50">
+    <br>
+
+    <!-- Options -->
+    <select id="unit">
+      <option value="deg">Degrees</option>
+      <option value="rad">Radians</option>
+    </select>
+
+    <select id="precision">
+      <option value="2">2 decimals</option>
+      <option value="4">4 decimals</option>
+      <option value="8">8 decimals</option>
+    </select>
+
+    <!-- Calculator Grid -->
+    <div class="calc-grid">
+
+      <!-- LEFT: Numbers & Operators -->
+      <div class="num-ops">
+        <!-- Top row -->
+        <button class="clear" onclick="clearInput()">C</button>
+        <button class="backspace" onclick="backspace()">⌫</button>
+        <button class="equal" onclick="calculate()">=</button>
+        <button onclick="insert('pi')">π</button>
+        <button onclick="insert('e')">e</button>
+        <button onclick="insert('^')">^</button>
+
+        <!-- 7 8 9 -->
+        <button onclick="insert('7')">7</button>
+        <button onclick="insert('8')">8</button>
+        <button onclick="insert('9')">9</button>
+        <button onclick="insert('(')">(</button>
+        <button onclick="insert(')')">)</button>
+        <button onclick="insert('x')">x</button>
+
+        <!-- 4 5 6 -->
+        <button onclick="insert('4')">4</button>
+        <button onclick="insert('5')">5</button>
+        <button onclick="insert('6')">6</button>
+        <button onclick="insert('+')">+</button>
+        <button onclick="insert('-')">-</button>
+        <button onclick="insert('*')">*</button>
+
+        <!-- 1 2 3 -->
+        <button onclick="insert('1')">1</button>
+        <button onclick="insert('2')">2</button>
+        <button onclick="insert('3')">3</button>
+        <button onclick="insert('/')">/</button>
+        <button onclick="insert('%')">%</button>
+        <button onclick="insert('.')">.</button>
+
+        <!-- 0 row -->
+        <button onclick="insert('0')" class="wide-btn">0</button>
+      </div>
+
+      <!-- RIGHT: Functions -->
+      <div class="funcs">
+        <button onclick="insert('sin(')">sin</button>
+        <button onclick="insert('cos(')">cos</button>
+        <button onclick="insert('tan(')">tan</button>
+
+        <button onclick="insert('sec(')">sec</button>
+        <button onclick="insert('csc(')">csc</button>
+        <button onclick="insert('cot(')">cot</button>
+
+        <button onclick="insert('asin(')">asin</button>
+        <button onclick="insert('acos(')">acos</button>
+        <button onclick="insert('atan(')">atan</button>
+
+        <button onclick="insert('sinh(')">sinh</button>
+        <button onclick="insert('cosh(')">cosh</button>
+        <button onclick="insert('tanh(')">tanh</button>
+      </div>
+    </div>
+
+    <!-- Result Display -->
+    <p><b>Result:</b> <span id="result"></span></p>
+    <p class="warn" id="warn"></p>
+
+    <!-- Calculation History -->
+    <div id="history">
+      <h4>History</h4>
+      <ul id="historyList"></ul>
+    </div>
+
+    <!-- Graph -->
+    <canvas id="graph" width="600" height="300"></canvas>
+  </div>
+
+  <!-- External Script -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+/* General Page Styling */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+body.light {
+  background: #f4f6f8;
+  color: #222;
+}
+body.light .container {
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+body.light canvas {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #181a1b;
+  color: #f1f1f1;
+}
+body.dark .container {
+  background: #242526;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.05);
+}
+body.dark input[type="text"], 
+body.dark select {
+  background: #2e2f31;
+  border: 1px solid #555;
+  color: #f1f1f1;
+}
+body.dark #history {
+  background: #2e2f31;
+  border-color: #555;
+}
+body.dark canvas {
+  background: #1e1f20;
+  border: 1px solid #444;
+}
+
+/* Calculator Container */
+.container {
+  width: 100%;
+  max-width: 950px;
+  padding: 20px 25px;
+  border-radius: 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Heading */
+.container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* Tagline Styling */
+.tagline {
+  text-align: center;
+  margin-top: -8px;   /* moves closer under the title */
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-style: italic;
+  color: #666;
+}
+body.dark .tagline {
+  color: #ddd;
+}
+
+
+/* Dark Mode Button */
+#toggleDark {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  background: #4A90E2;
+  color: white;
+  transition: 0.2s ease;
+}
+#toggleDark:hover {
+  background: #357ABD;
+}
+
+/* Input & Selections */
+input[type="text"], select {
+  font-size: 16px;
+  padding: 10px;
+  margin: 6px 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+input[type="text"]:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 4px rgba(74, 144, 226, 0.3);
+}
+select {
+  background: #fff;
+  cursor: pointer;
+}
+
+/* ==============================
+   GRID LAYOUT: NUMBERS & FUNCS
+   ============================== */
+.calc-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* left bigger */
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Numbers + Operators */
+.num-ops {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.num-ops button.wide-btn {
+  grid-column: span 2;
+}
+
+/* Function Buttons */
+.funcs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+/* Base Buttons */
+.num-ops button, 
+.funcs button,
+button.clear, 
+button.backspace, 
+button.equal {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background: #f1f1f1;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.num-ops button:hover, 
+.funcs button:hover,
+button.clear:hover,
+button.backspace:hover,
+button.equal:hover {
+  background: #e0e0e0;
+}
+
+/* Special Buttons */
+button.clear {
+  background: #E94E4E;
+  color: white;
+  border: none;
+}
+button.clear:hover { background: #C93030; }
+
+button.equal {
+  background: #4CAF50;
+  color: white;
+  border: none;
+}
+button.equal:hover { background: #3C9B42; }
+
+button.backspace {
+  background: #FF9800;
+  color: white;
+  border: none;
+}
+button.backspace:hover { background: #E68900; }
+
+/* Dark Mode Buttons */
+body.dark .num-ops button,
+body.dark .funcs button {
+  background: #333;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+body.dark .num-ops button:hover,
+body.dark .funcs button:hover {
+  background: #444;
+}
+
+/* Result */
+#result {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: inherit;
+}
+
+/* Warning/Error Messages */
+.warn {
+  color: red;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* ==============================
+   HISTORY
+   ============================== */
+#history {
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+#history h4 {
+  margin: 0 0 10px;
+  color: inherit;
+}
+#history ul {
+  list-style-type: none;
+  padding-left: 12px;
+  margin: 0;
+}
+#history li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ==============================
+   GRAPH
+   ============================== */
+canvas {
+  margin-top: 20px;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 6px;
+  padding: 6px;
+  transition: background 0.3s, border 0.3s;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media screen and (max-width: 800px) {
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+  .num-ops {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .funcs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  input[type="text"] {
+    width: 95%;
+  }
+}
