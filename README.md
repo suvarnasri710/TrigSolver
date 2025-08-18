@@ -12,6 +12,9 @@ TrigSolver is a feature-rich web application for solving trigonometric equations
 - Frontend: HTML, CSS, JavaScript
 - Version Control: Git & GitHub
 
+🔘Live demo 
+https://trig-solver.vercel.app/
+
 📄 How to Use
 - Enter an angle value
 - Select the desired trigonometric function
