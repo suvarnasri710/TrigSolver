@@ -7,3 +7,21 @@ TrigSolver is a feature-rich web application for solving trigonometric equations
 - Precision control for accurate results
 - History tracking of previous calculations
 - Dark mode toggle for better UX
+
+🛠️ Tech Stack
+- Frontend: HTML, CSS, JavaScript
+- Version Control: Git & GitHub
+
+📄 How to Use
+- Enter an angle value
+- Select the desired trigonometric function
+- View the result instantly
+
+📁 Folder Structure
+Trig_Calculator/
+├── index.html
+├── style.css
+└── script.js
+
+
+
