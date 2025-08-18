@@ -13,7 +13,7 @@ TrigSolver is a feature-rich web application for solving trigonometric equations
 - Version Control: Git & GitHub
 
 🔘Live demo 
-• https://trig-solver.vercel.app/
+   https://trig-solver.vercel.app/
 
 📄 How to Use
 - Enter an angle value
